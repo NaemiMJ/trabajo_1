@@ -1,0 +1,468 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(../images/body-bg.jpg)   ;
+}
+
+
+header {
+    background-image: url(../images/hero-bg.png);
+    background-size: cover;
+    background-position: left bottom;
+    background-repeat: no-repeat;
+    min-height: 105vh;
+}
+
+
+nav { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.link a {
+    transition: transform 0.3s ease;
+}
+
+.link a:hover {
+    transform: translateY(-5px);
+}
+
+#fanadesh {
+    font-size: 26px;
+    font-weight: bold;
+}
+
+nav .link {
+    display: flex;
+    gap: 25px;
+}
+
+div.t_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.titul0 {
+    max-width: 500px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: normal; 
+    margin-bottom: 20px;
+    color: white;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 30px;
+    color: white;
+    line-height: 1.5;
+}
+
+div.t_img img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+.boton_header {
+    display: inline-block;
+    background-color: white;
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.boton_header:hover {
+    background-color: #cc9602;
+    color: white;
+    transform: translateY(-5px);
+}
+
+
+@media (max-width: 768px) {
+    div.t_img {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .titul0 {
+        max-width: 90%;
+    }
+
+    div.t_img img {
+        max-width: 300px;
+    }
+}
+
+.secciones section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding: 60px 5%;
+    flex-wrap: wrap;
+}
+
+.secciones section img {
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+}
+
+.secciones section .texto {
+    max-width: 400px;
+}
+
+.secciones section .texto span {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.secciones section .texto p {
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.boton{
+    display: inline-block;
+    color: rgb(255, 255, 255);
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.boton.uno{
+    background-color: #70bcac;   
+}
+.boton.dos{
+    background-color: #ffd41c;   
+}
+.boton:hover {
+    color: white;
+    transform: translateY(-5px);
+}
+
+.boton.uno:hover{
+   background-color: #226457;
+}
+.boton.dos:hover{
+    background-color: #af920d;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    padding-top: 60px;
+}
+
+.cliente {
+    color: #ffd41c;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.secciones section .texto_cliente {
+    max-width: 600px;
+}
+
+
+/*inicio para cambio con botones del testimonio*/
+.testimonios input[type="radio"] {
+    display: none;
+}
+
+.contenedor {
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+}
+
+.testimonio {
+    position: absolute;
+    top: 0;
+    left: 450px;
+    width: 100%;
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    flex-wrap: nowrap;
+    text-align: left;
+}
+
+.testimonio .cliente_img {
+    flex-shrink: 0;
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+    transition: none;
+}
+
+.cliente_img.perrito {
+    border-radius: 50%;
+}
+
+.contenedor_barras {
+    position: relative;
+    display: inline-block;
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+#test1:checked ~ .contenedor .uno,
+#test2:checked ~ .contenedor .dos,
+#test3:checked ~ .contenedor .tres {
+    opacity: 1;
+    transform: scale(1);
+    position: relative;
+}
+@keyframes moverIzquierda {
+    0%   { transform: rotateZ(-45deg) translate(0, 0); }
+    100%  { transform: rotateZ(-45deg) translate(-10px, -50px); }  
+}
+
+@keyframes moverDerecha {
+    0%   { transform: rotateZ(-45deg) translate(0, 0); }
+    100%  { transform: rotateZ(-45deg) translate(10px, 50px); }
+}
+
+.barra {
+    background-color: #ffd41c;
+    width: 80px;
+    height: 30px;
+    border-radius: 30px;
+    transform: rotateZ(-45deg);
+    position: absolute;
+    z-index: 2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards; 
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1
+}
+
+.barra.izq {
+    top: 20px;
+    animation-name: moverIzquierda;
+}
+
+.barra.der {
+    bottom: 20px;
+    right: 0;
+    animation-name: moverDerecha;
+}
+
+.controles {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.controles label {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background: #70bcac;   
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+}
+
+input#test1:checked ~ .controles label[for="test1"],
+input#test2:checked ~ .controles label[for="test2"],
+input#test3:checked ~ .controles label[for="test3"] {
+    background: #ffd41c;
+}
+/*termino botonos de cambio*/
+
+/*formulario de contacto*/
+.contacto {
+    width: 100%;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+  
+.contenedero_contacto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1000px;
+    width: 100%;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+  
+.formulario {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+  }
+  .formulario h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #111;
+  }
+  
+.formulario input,
+.formulario textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    border-bottom: 2px solid #000;
+    font-size: 14px;
+    outline: none;
+    background-color: transparent;
+  }
+  
+  .formulario textarea {
+    resize: none;
+    height: 80px;
+  }
+  
+.enviar {
+    background-color: #69dbc6;
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100px;
+    transition: background-color 0.3s ease;
+  }
+  
+.enviar:hover {
+    background-color: #53cbb3;
+  }
+  
+  .contenedero_contacto img {
+    flex: 1 1 400px;
+    max-width: 100%;
+    height: auto;
+  }
+  
+
+  .contenedor-footer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .titulo-footer {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: white;
+    border-bottom: 2px solid #ffd41c;
+    display: inline-block;
+    padding-bottom: 5px;
+  }
+  
+  .secciones-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: flex-start; 
+    margin-top: 30px;
+    text-align: left;
+    gap: 20px;
+  }
+  
+  .seccion-footer {
+    flex: 1 1 220px;
+    margin: 10px;
+  }
+  
+  .seccion-footer h3 {
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  
+  .seccion-footer ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .seccion-footer ul li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #ddd;
+  }
+
+  .seccion-footer p {
+    color: white;
+  }
+
+  .seccion-footer a {
+    color: white;
+    text-decoration: none;
+    
+  }
+
+  .seccion-footer a:hover{
+    color: #cc9602;
+  }
+  
+  .seccion-footer input[type="email"] {
+    padding: 8px;
+    width: 100%;
+    margin-bottom: 10px;
+    border: none;
+  }
+  
+  .seccion-footer button {
+    padding: 8px 16px;
+    background-color: #ffd41c;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .fondo-amarillo {
+    background-color: #ffd41c;
+    color: black;
+    padding: 15px 5px;
+    text-align: center;
+    font-size: 14px;
+  }
